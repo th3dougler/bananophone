@@ -7,6 +7,7 @@ module.exports = {
   mode: 'development',
   output: {
     path: path.resolve(__dirname, 'build', 'client'),
+    publicPath: '/',
     filename: 'bundle.js'
   },
   resolve: {
@@ -26,6 +27,17 @@ module.exports = {
       {
         test: /\.css$/,
         loader: 'css-loader'
+      },
+      {
+        test: /\.(png|jp(e*)g|svg|gif)$/,
+        use: [
+          {
+            loader: 'file-loader',
+            options: {
+              name: 'images/[hash]-[name].[ext]'
+            }
+          }
+        ]
       }
     ]
   },

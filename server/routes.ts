@@ -1,8 +1,7 @@
 import { Request, Response, Router } from 'express';
 const router = Router();
 
-router.get('/lol', (req: Request, res: Response) => {
-  console.log(req.url);
-  res.sendFile('/home/doug/bananophone/build/client/index.html');
+router.get('/api', (req: Request, res: Response) => {
+  res.send('api');
 });
 module.exports = router;
