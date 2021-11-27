@@ -5,7 +5,7 @@ export const startServer = async () => {
   const app = express();
 
   app.use(express.json());
-  const buildPath = path.join(__dirname, '..', 'build/client');
+  const buildPath = path.join(process.cwd(), 'build', 'client');
 
   console.log(buildPath);
   const port = process.env.PORT || 3000;

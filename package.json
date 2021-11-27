@@ -5,8 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "npx ts-node index.ts",
-    "dev:server": "nodemon index.ts",
+    "start": "node build/index.js",
+    "dev:server": "cd build && nodemon ../index.ts",
     "dev:client": "npx webpack --watch",
     "build:server": "npx tsc --project tsconfig.server.json",
     "build:client": "npx webpack"

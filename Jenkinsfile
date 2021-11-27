@@ -4,17 +4,16 @@ pipeline {
         args '-p 3000:3000'
     } }
     stages {
-        stage('Test') {
+        stage('Prepare') {
             steps {
-                sh 'node --version'
-                sh 'node -c index.js'
+                sh 'npm install'
+                sh 'npm run build:client'
+                sh 'npm run build:server'
             }
         }
         stage('Deploy Local') {
             steps {
-                sh 'npm install'
-                sh 'npm run client:build'
-                sh 'npm run server:stag'
+                sh 'npm start'
             }
         }
         stage('Destroy Instance') {
