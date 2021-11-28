@@ -7,7 +7,7 @@
     "moduleResolution": "node",
     "esModuleInterop": true,
     "sourceMap": true,
-    "lib": ["es6"],
+    "lib": ["es6","dom"],
     "strict": true,
     "forceConsistentCasingInFileNames": true,
   },
@@ -16,6 +16,7 @@
     "server"
   ],
   "exclude": [
-    "./client"
+    "./client",
+    "node_modules"
   ]
 }

@@ -6,7 +6,6 @@ import Typography from '@material-ui/core/Typography';
 import IconButton from '@material-ui/core/IconButton';
 import { SvgIcon } from '@material-ui/core';
 import { Menu } from '@material-ui/icons';
-import BananaIcon from '../public/bananaicon.svg';
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1
@@ -32,9 +31,8 @@ export default function MainAppBar() {
             color="inherit"
             aria-label="menu"
           >
-            <SvgIcon component={BananaIcon} />
+            <Menu />
           </IconButton>
-
           <Typography variant="h6" className={classes.title}>
             Banano Phone
           </Typography>
