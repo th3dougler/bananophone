@@ -13,12 +13,13 @@ pipeline {
         }
         stage('Deploy Local') {
             steps {
-                sh 'npm start'
+                sh 'npm start &'
             }
         }
         stage('Destroy Instance') {
             steps {
                 input "OK?"   
+                sh 'pkill node'
             }
         }   
     }
