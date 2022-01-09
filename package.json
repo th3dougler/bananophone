@@ -9,10 +9,14 @@
     "dev:server": "nodemon index.ts",
     "dev:client": "npx webpack --watch",
     "build:server": "npx tsc --project tsconfig.server.json",
-    "build:client": "npx webpack"
+    "build:client": "npx webpack",
+    "build": "npm run build:client && npm run build:server"
   },
   "author": "",
   "license": "ISC",
+  "engines": {
+    "node": "16.13.0"
+  },
   "devDependencies": {
     "@types/bunyan": "^1.8.8",
     "@types/express": "^4.17.13",
