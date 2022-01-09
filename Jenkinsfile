@@ -7,8 +7,7 @@ pipeline {
         stage('Prepare') {
             steps {
                 sh 'npm install'
-                sh 'npm run build:client'
-                sh 'npm run build:server'
+                sh 'npm run build'
             }
         }
         stage('Deploy Local') {

@@ -2,6 +2,7 @@ import * as React from 'react';
 import { Router, RouteComponentProps, Link } from '@reach/router';
 import {
   Box,
+  Button,
   Container,
   createTheme,
   Grid,
@@ -9,6 +10,7 @@ import {
   ThemeProvider
 } from '@material-ui/core';
 import MainAppBar from './components/MainAppBar';
+import { GET } from './utils/request';
 
 export const themeOptions: ThemeOptions = {
   palette: {
@@ -30,8 +32,20 @@ export const themeOptions: ThemeOptions = {
   }
 };
 const theme = createTheme(themeOptions);
+
+const handleClick = async () => {
+  const response = await GET('/api');
+  console.log(response);
+};
+
 let Home = (props: RouteComponentProps) => <div>Home</div>;
-let Dash = (props: RouteComponentProps) => <div>Dash</div>;
+let Dash = (props: RouteComponentProps) => (
+  <div>
+    <span>Dash</span>
+    <br />
+    <Button onClick={handleClick}>Button</Button>
+  </div>
+);
 export const App = () => (
   <ThemeProvider theme={theme}>
     <MainAppBar />
@@ -40,7 +54,7 @@ export const App = () => (
         <Container maxWidth="sm">
           <Router>
             <Home path="/" />
-            <Dash path="dashboard" />
+            <Dash path="/dashboard" />
           </Router>
         </Container>
       </Grid>

@@ -17,5 +17,6 @@
   "include": [
     "client/src/**/*",
     "types"
-  ]
+  ],
+  "exclude": ["node_modules", "types"]
 }

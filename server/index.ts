@@ -1,19 +1,19 @@
 import { Request, Response } from 'express';
-import { resolve } from 'path';
+import routes from '../controllers';
 
 const express = require('express');
+const cors = require('cors');
 const path = require('path');
 const buildPath = path.join(process.cwd(), 'build', 'client');
-// const routes = require('./routes');
 export const startServer = async () => {
   const app = express();
-
+  app.use(cors());
   app.use(express.json());
-
-  console.log(buildPath);
   const port = process.env.PORT || 3000;
 
   app.use(express.static(buildPath));
+  app.use(routes);
+
   app.get('*', (req: Request, res: Response) => {
     res.sendFile(path.join(buildPath, '/index.html'));
   });
