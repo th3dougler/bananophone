@@ -1,7 +1,5 @@
-const isDev = process.env.NODE_ENV !== 'production';
-let config: any = {};
-if (isDev) {
-  config = require('./dev.json');
-}
+const env = process.env.NODE_ENV || 'development';
+
+const config = require(`../../config/${env}.json`);
 
 export default config;
