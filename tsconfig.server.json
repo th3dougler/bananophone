@@ -9,6 +9,9 @@
     "sourceMap": true,
     "lib": ["es6","dom"],
     "strict": true,
+    "noImplicitAny": true,
+    "noImplicitThis": true,
+    "strictNullChecks": true,
     "forceConsistentCasingInFileNames": true,
     "typeRoots": ["./types", "./node_modules/@types"]
   },

@@ -32,7 +32,7 @@ const validateAddress: RequestHandler = async (req, res, next) => {
       });
     }
     next();
-  } catch (error) {
+  } catch (error: any) {
     logger.error(error);
     return res.status(400).json({
       success: false,
@@ -50,7 +50,7 @@ const doGetAccountInfo: RequestHandler = async (req, res) => {
     const address = String(req.query.address);
     const accountInfo = await bananojs.getAccountInfo(address);
     return res.json({ success: true, data: accountInfo });
-  } catch (error) {
+  } catch (error: any) {
     logger.error(error);
     return res.status(400).json({
       success: false,
@@ -71,7 +71,7 @@ const doGetAccountBalance: RequestHandler = async (req, res) => {
       ...parts
     };
     return res.json({ success: true, data });
-  } catch (error) {
+  } catch (error: any) {
     logger.error(error);
     return res.status(400).json({
       success: false,
